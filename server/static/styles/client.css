@@ -1,0 +1,156 @@
+@import url("https://use.typekit.net/sso3kkk.css");
+* {
+    font-family: "Downtempo", sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+fieldset{
+    border-radius: 20px;
+    border: black solid 2px;
+}
+
+main {
+    background-color: rgb(4,106,56);
+    padding: 10px;
+    margin-top: -10px;
+    border-radius: 0 0 10px 10px;
+}
+
+h1 {
+    text-align: center;
+}
+#valControl > h1, #ow2Control > h1, #homeControl > h1, #otherControl > h1{
+    color: rgb(242, 241, 240);
+}
+button:hover{
+    background-color: rgb(213, 245, 241);
+}
+
+input{
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: large;
+}
+.recordField input{
+    width: 30px;
+}
+.fieldA button, .fieldB button{
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.scoreButton{
+    height: 50px;
+    width: 50px;
+    font-weight: 600;
+    font-size: large;
+}
+#tolA, #tolB{
+    width: min-content;
+    height: 30px;
+    font-size: large;
+}
+
+nav {
+    padding-top: 10px;
+    display: flex;
+    width: 100%;
+    height: 3vw;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+    font-weight: 600;
+    font-size: x-large;
+    overflow: hidden;
+}
+nav a {
+    background-color: rgb(4,106,56);
+    color: rgb(242, 241, 240);
+    width: 25%;
+    text-decoration: none;
+    border-radius: 12px 12px 0 0;
+    transition: transform 0.2s ease, color 0.2s;
+}
+nav a:not(.active):hover {
+    background-color: rgb(4,106,56);
+    color: rgb(248,224,142);
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+nav a.active {
+    color: rgb(203,160,82); /* Highlight color */
+    transform: none; /* Disable hover animation */
+    cursor: default; /* Indicate it’s the active item */
+    transform: translateY(-10px);
+    z-index: 9;
+}
+
+.controlField{
+    margin: 10px;
+    display: grid;
+    gap: 5px;
+    grid-template-areas:
+    "teamA preview teamB"
+    "teamA other teamB";
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.575);
+}
+.controlField h2{
+    margin: auto;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+.controlField h3{
+    margin: 6px;
+}
+.fieldA{
+    grid-area: teamA;
+}
+.fieldB{
+    grid-area: teamB;
+}
+.previewField{
+    grid-area: preview;
+    display: block;
+    justify-content: center;
+}
+.previewField h1{
+    margin-left: 6px;
+    margin-right: 6px;
+}
+.previewField img{
+    margin: 0 5px 5px;
+}
+.otherField{
+    grid-area: other;
+}
+.scoreContainer{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: -30px;
+}
+.tolContainer{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.scoreTOPanel{
+    padding-bottom: 8px;
+    border-bottom: solid black 1px;
+}
+.teamInfoPanel{
+    text-align: left;
+}
+.teamInfoPanel h3{
+    text-align: center;
+}
+
+.teamContainer{
+    display: flex;
+    justify-content: center;
+}

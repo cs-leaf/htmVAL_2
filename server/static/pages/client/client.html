@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script defer src="../../scripts/client/client.js"></script>
+    <link rel="stylesheet" href="../../styles/client.css">
+</head>
+<body>
+    <nav>
+        <a onclick="selectGame(0)" class="active">HOME</a>
+        <a onclick="selectGame(1)">VALORANT</a>
+        <a onclick="selectGame(2)">OVERWATCH 2</a>
+        <a onclick="selectGame(3)">OTHER</a>
+    </nav>
+    <main>
+        <div id="homeControl">
+            <h1>htmVAL Home</h1>
+        </div>
+        <div id="valControl">
+            <h1>VALORANT Controls</h1>
+                <fieldset class="controlField">
+                    <fieldset class="fieldA">
+                    <legend><h2 id="nameADisplay">Team A</h2></legend>
+                        <div class="scoreTOPanel">
+                            <label><strong>Score: </strong></label>
+                            <button class="scoreButton" onclick="updateScore(0,1)">+1</button>
+                            <button class="scoreButton" onclick="updateScore(0,-1)">-1</button><br>
+                            <label><strong>Timeouts:</strong></label>
+                            <input type="number" id="tolA" min="0" max="2" value="2"><br>
+                            <button id="resetScoreA" onclick="resetScore(0)">Reset Score</button>
+                        </div>
+                        <div class="teamInfoPanel">
+                            <h3>Team Info:</h3>
+                            <label><strong>Team Name: </strong></label>
+                            <input type="text" id="inputNameA" placeholder="Team Name"><br>
+                            <label><strong>Team Slug/Tag: </strong></label>
+                            <input type="text" id="inputSlugA" placeholder="TA1" max="4"><br>
+                            <div class="recordField">
+                                <label><strong>Wins: </strong></label>
+                                <input type="number" id="inputWinsA" max="99" min="0" value="0">
+                                <label><strong>Losses: </strong></label>
+                                <input type="number" id="inputLossesA" max="99" min="0" value="0">
+                            </div>
+                            <label><strong>Primary Color: </strong></label>
+                            <input type="color" id="inputPColA" value="#FF0000"><br>
+                            <label><strong>Secondary Color: </strong></label>
+                            <input type="color" id="inputSColA" value="#000000"><br>
+                            <label><strong>Logo URL: </strong></label>
+                            <input type="url" id="inputImgA" placeholder="Paste Image URL"><br>
+                            <button id="inputSubmitA" onclick="submitTeamInfo(0)">Submit Team Info</button>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="previewField">
+                        <div class="scoreContainer">
+                        <h1 id="scoreHome">0</h1>
+                        <h1> - </h1>
+                        <h1 id="scoreAway">0</h1>
+                        </div><br>
+                        <div class="teamContainer">
+                            <div>
+                                <img src="https://placehold.co/400" id="imgA" height="75px">
+                                <h3 id="recordADisplay">0 - 0</h3>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/400" id="imgB" height="75px">
+                                <h3 id="recordBDisplay">0 - 0</h3>
+                            </div>
+                        </div>
+                        <div class="tolContainer">
+                            <h3 id="tolADisplay">2</h3>
+                            <h3> Timeouts Left </h3>
+                            <h3 id="tolBDisplay">2</h3>
+                        </div>
+                    </fieldset>
+                    
+                    <fieldset class="otherField">
+                        <h3>Other Controls</h3>
+                        <button onclick="flipBoard()">Flip Scorebug</button><br>
+                        <label id="flipValue">Flipped is false.</label><br><br>
+                        <label><strong>Map Pool: </strong></label><br>
+                        <label>BO3</label>
+                        <input type="radio" id="inputBO3" name="VALbestOfRadio" value="0"> <!--0 denotes best of 3, 1 denotes best of 5-->
+                        <label>BO5</label>
+                        <input type="radio" id="inputBO5" name="VALbestOfRadio" value="1">
+                        <div id="valBO3Select">
+                            <input type="radio" name="valCurrMap" id="valCurrMap1_3" value="1">
+                            <select name="valBO3_map1" id="valBO3_map1">
+                                <option value="noSel">Select a map</option>
+                                <option value="ABYSS">Abyss</option>
+                                <option value="ASCENT">Ascent</option>
+                                <option value="BIND">Bind</option>
+                                <option value="BREEZE">Breeze</option>
+                                <option value="FRACTURE">Fracture</option>
+                                <option value="HAVEN">Haven</option>
+                                <option value="ICEBOX">Icebox</option>
+                                <option value="LOTUS">Lotus</option>
+                                <option value="PEARL">Pearl</option>
+                                <option value="SPLIT">Split</option>
+                                <option value="SUNSET">Sunset</option>
+                            </select>
+                            <label>Who won?</label>
+                            <select name="val_map1WinnerBO3" id="val_map1WinnerBO3">
+                                <option value="NONE">Not Concluded</option>
+                                <option value="A">Team A</option>
+                                <option value="B">Team B</option>
+                            </select><br>
+                            <input type="radio" name="valCurrMap" id="valCurrMap2_3" value="2">
+                            <select name="valBO3_map2" id="valBO3_map2">
+                                <option value="noSel">Select a map</option>
+                                <option value="ABYSS">Abyss</option>
+                                <option value="ASCENT">Ascent</option>
+                                <option value="BIND">Bind</option>
+                                <option value="BREEZE">Breeze</option>
+                                <option value="FRACTURE">Fracture</option>
+                                <option value="HAVEN">Haven</option>
+                                <option value="ICEBOX">Icebox</option>
+                                <option value="LOTUS">Lotus</option>
+                                <option value="PEARL">Pearl</option>
+                                <option value="SPLIT">Split</option>
+                                <option value="SUNSET">Sunset</option>
+                            </select>
+                            <label>Who won?</label>
+                            <select name="val_map2WinnerBO3" id="val_map2WinnerBO3">
+                                <option value="NONE">Not Concluded</option>
+                                <option value="A">Team A</option>
+                                <option value="B">Team B</option>
+                            </select><br>
+                            <input type="radio" name="valCurrMap" id="valCurrMap3_3" value="3">
+                            <select name="valBO3_map3" id="valBO3_map3">
+                                <option value="noSel">Select a map</option>
+                                <option value="ABYSS">Abyss</option>
+                                <option value="ASCENT">Ascent</option>
+                                <option value="BIND">Bind</option>
+                                <option value="BREEZE">Breeze</option>
+                                <option value="FRACTURE">Fracture</option>
+                                <option value="HAVEN">Haven</option>
+                                <option value="ICEBOX">Icebox</option>
+                                <option value="LOTUS">Lotus</option>
+                                <option value="PEARL">Pearl</option>
+                                <option value="SPLIT">Split</option>
+                                <option value="SUNSET">Sunset</option>
+                            </select>
+                            <label>Who won?</label>
+                            <select name="val_map3WinnerBO3" id="val_map3WinnerBO3">
+                                <option value="NONE">Not Concluded</option>
+                                <option value="A">Team A</option>
+                                <option value="B">Team B</option>
+                            </select><br>
+                        </div>
+                        <div id="valBO5Select">
+                            <input type="radio" name="valCurrMap" id="valCurrMap1_5" value="1">
+                            <select name="valBO5_map1" id="valBO5_map1">
+                                <option value="noSel">Select a map</option>
+                                <option value="ABYSS">Abyss</option>
+                                <option value="ASCENT">Ascent</option>
+                                <option value="BIND">Bind</option>
+                                <option value="BREEZE">Breeze</option>
+                                <option value="FRACTURE">Fracture</option>
+                                <option value="HAVEN">Haven</option>
+                                <option value="ICEBOX">Icebox</option>
+                                <option value="LOTUS">Lotus</option>
+                                <option value="PEARL">Pearl</option>
+                                <option value="SPLIT">Split</option>
+                                <option value="SUNSET">Sunset</option>
+                            </select>
+                            <label>Who won?</label>
+                            <select name="val_map1WinnerBO5" id="val_map1WinnerBO5">
+                                <option value="NONE">Not Concluded</option>
+                                <option value="A">Team A</option>
+                                <option value="B">Team B</option>
+                            </select><br>
+                            <input type="radio" name="valCurrMap" id="valCurrMap2_5" value="2">
+                            <select name="valBO5_map2" id="valBO5_map2">
+                                <option value="noSel">Select a map</option>
+                                <option value="ABYSS">Abyss</option>
+                                <option value="ASCENT">Ascent</option>
+                                <option value="BIND">Bind</option>
+                                <option value="BREEZE">Breeze</option>
+                                <option value="FRACTURE">Fracture</option>
+                                <option value="HAVEN">Haven</option>
+                                <option value="ICEBOX">Icebox</option>
+                                <option value="LOTUS">Lotus</option>
+                                <option value="PEARL">Pearl</option>
+                                <option value="SPLIT">Split</option>
+                                <option value="SUNSET">Sunset</option>
+                            </select>
+                            <label>Who won?</label>
+                            <select name="val_map2WinnerBO5" id="val_map2WinnerBO5">
+                                <option value="NONE">Not Concluded</option>
+                                <option value="A">Team A</option>
+                                <option value="B">Team B</option>
+                            </select><br>
+                            <input type="radio" name="valCurrMap" id="valCurrMap3_5" value="3">
+                            <select name="valBO5_map3" id="valBO5_map3">
+                                <option value="noSel">Select a map</option>
+                                <option value="ABYSS">Abyss</option>
+                                <option value="ASCENT">Ascent</option>
+                                <option value="BIND">Bind</option>
+                                <option value="BREEZE">Breeze</option>
+                                <option value="FRACTURE">Fracture</option>
+                                <option value="HAVEN">Haven</option>
+                                <option value="ICEBOX">Icebox</option>
+                                <option value="LOTUS">Lotus</option>
+                                <option value="PEARL">Pearl</option>
+                                <option value="SPLIT">Split</option>
+                                <option value="SUNSET">Sunset</option>
+                            </select>
+                            <label>Who won?</label>
+                            <select name="val_map3WinnerBO5" id="val_map3WinnerBO5">
+                                <option value="NONE">Not Concluded</option>
+                                <option value="A">Team A</option>
+                                <option value="B">Team B</option>
+                            </select><br>
+                            <input type="radio" name="valCurrMap" id="valCurrMap4_5" value="4">
+                            <select name="valBO5_map4" id="valBO5_map4">
+                                <option value="noSel">Select a map</option>
+                                <option value="ABYSS">Abyss</option>
+                                <option value="ASCENT">Ascent</option>
+                                <option value="BIND">Bind</option>
+                                <option value="BREEZE">Breeze</option>
+                                <option value="FRACTURE">Fracture</option>
+                                <option value="HAVEN">Haven</option>
+                                <option value="ICEBOX">Icebox</option>
+                                <option value="LOTUS">Lotus</option>
+                                <option value="PEARL">Pearl</option>
+                                <option value="SPLIT">Split</option>
+                                <option value="SUNSET">Sunset</option>
+                            </select>
+                            <label>Who won?</label>
+                            <select name="val_map4WinnerBO5" id="val_map4WinnerBO5">
+                                <option value="NONE">Not Concluded</option>
+                                <option value="A">Team A</option>
+                                <option value="B">Team B</option>
+                            </select><br>
+                            <input type="radio" name="valCurrMap" id="valCurrMap5_5" value="5">
+                            <select name="valBO5_map5" id="valBO5_map5">
+                                <option value="noSel">Select a map</option>
+                                <option value="ABYSS">Abyss</option>
+                                <option value="ASCENT">Ascent</option>
+                                <option value="BIND">Bind</option>
+                                <option value="BREEZE">Breeze</option>
+                                <option value="FRACTURE">Fracture</option>
+                                <option value="HAVEN">Haven</option>
+                                <option value="ICEBOX">Icebox</option>
+                                <option value="LOTUS">Lotus</option>
+                                <option value="PEARL">Pearl</option>
+                                <option value="SPLIT">Split</option>
+                                <option value="SUNSET">Sunset</option>
+                            </select>
+                            <label>Who won?</label>
+                            <select name="val_map5WinnerBO5" id="val_map5WinnerBO5">
+                                <option value="NONE">Not Concluded</option>
+                                <option value="A">Team A</option>
+                                <option value="B">Team B</option>
+                            </select><br>
+                        </div><br>
+                        <button id="inputSubmitMaps" onclick="submitMaps()">Submit Map Info</button>
+                    </fieldset>
+                    
+                    <fieldset class="fieldB">
+                    <legend><h2 id="nameBDisplay">Team B</h2></legend>
+                    <div class="scoreTOPanel">
+                        <label><strong>Score: </strong></label>
+                        <button class="scoreButton" onclick="updateScore(1,1)">+1</button>
+                        <button class="scoreButton" onclick="updateScore(1,-1)">-1</button><br>
+                        <label><strong>Timeouts: </strong></label>
+                        <input type="number" id="tolB" min="0" max="2" value="2"><br>
+                        <button id="resetScoreB" onclick="resetScore(1)">Reset Score</button>
+                    </div>
+                    <div class="teamInfoPanel">
+                        <h3>Team Info:</h3>
+                        <label><strong>Team Name: </strong></label>
+                        <input type="text" id="inputNameB" placeholder="Team Name"><br>
+                        <label><strong>Team Slug/Tag: </strong></label>
+                        <input type="text" id="inputSlugB" placeholder="TA1" max="4"><br>
+                        <div class="recordField">
+                            <label><strong>Wins: </strong></label>
+                            <input type="number" id="inputWinsB" max="99" min="0" value="0">
+                            <label><strong>Losses: </strong></label>
+                            <input type="number" id="inputLossesB" max="99" min="0" value="0">
+                        </div>
+                        <label><strong>Primary Color: </strong></label>
+                        <input type="color" id="inputPColB" value="#00FF00"><br>
+                        <label><strong>Secondary Color: </strong></label>
+                        <input type="color" id="inputSColB" value="#FFFFFF"><br>
+                        <label><strong>Logo URL: </strong></label>
+                        <input type="url" id="inputImgB" placeholder="Paste Image URL"><br>
+                        <button id="inputSubmitB" onclick="submitTeamInfo(1)">Submit Team Info</button>
+                    </div>
+                    </fieldset>
+                </fieldset>
+        </div>
+        <div id="ow2Control">
+            <h1>Overwatch 2 Controls</h1>
+                <fieldset>
+                    <button onclick="updateScore(0,1)">+1</button>
+                    <button onclick="updateScore(0,-1)">-1</button>
+                </fieldset>
+        </div>
+        <div id="otherControl">
+            <h1>Other Controls</h1>
+                <fieldset>
+                    <button onclick="updateScore(0,1)">+1</button>
+                    <button onclick="updateScore(0,-1)">-1</button>
+                </fieldset>
+        </div>
+    </main>
+</body>
+</html>

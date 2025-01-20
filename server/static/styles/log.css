@@ -1,0 +1,28 @@
+@import url("https://use.typekit.net/sso3kkk.css");
+* {
+    font-family: "Downtempo", sans-serif;
+}
+
+aside{
+    display: flex;
+}
+.infoDispL, .infoDispR{
+    display: inline-flex;
+}
+
+.scoreImgContainer label{
+    font-weight: 800;
+    font-size: 110px;
+}
+.hyphen{
+    font-weight: 800;
+    font-size: 110px;
+    margin: 0 10px;
+}
+.recordNameContainer label{
+    font-weight: 800;
+    font-size: large;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}

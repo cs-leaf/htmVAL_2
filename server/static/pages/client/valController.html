@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script defer src="../../scripts/client/client.js"></script>
+    <link rel="stylesheet" href="../../styles/client.css">
+</head>
+<body>
+    <div id="valControls"></div>
+    <nav>
+        <p onclick="selectGame(0)">HOME</p>
+        <p onclick="selectGame(1)">VALORANT</p>
+        <p onclick="selectGame(2)">OVERWATCH 2</p>
+        <p onclick="selectGame(3)">OTHER</p>
+    </nav>
+    <main>
+        <h1>VALORANT</h1>
+        <button onclick="updateScore(0,1)">+1</button>
+        <button onclick="updateScore(0,-1)">-1</button>
+    </main>
+</body>
+</html>

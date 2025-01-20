@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script defer src="../../scripts/debug/log.js"></script>
+    <link rel="stylesheet" href="../../styles/log.css">
+</head>
+<body>
+    <aside>
+        <div id="infoDispL">
+            <div class="scoreImgContainer">
+                <img src="https://placehold.co/400" id="imgA" height="75px">
+                <label id="scoreA">0</label>
+            </div>
+            <div class="recordNameContainer">
+                <label id="nameA">TempA</label>
+                <label id="recordA">0 - 0</label>
+            </div>
+        </div>
+        <label class="hyphen"> - </label>
+        <div id="infoDispR">
+            <div class="scoreImgContainer">
+                <label id="scoreB">0</label>
+                <img src="https://placehold.co/400" id="imgB" height="75px" width="75px">
+            </div>
+            <div class="recordNameContainer">
+                <label id="nameB">TempB</label>
+                <label id="recordB">0 - 0</label>
+            </div>
+        </div>
+    </aside>
+
+    <main>
+        <h2>Log of updates will be displayed here.</h2>
+        <div id="infoLog">
+        </div>
+    </main>
+</body>
+</html>
