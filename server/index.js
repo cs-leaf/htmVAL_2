@@ -72,7 +72,6 @@ io.on('connection', (socket) => {
     let serverCols = [["#FF0000","#00FF00"],["#000000","#FFFFFF"]] // [0[0]] and [0[1]] are primary colors, [1[0]] and [1[1]] are secondary colors.
     let serverLogos = ["https://placehold.co/400","https://placehold.co/400"];
     let serverTOL = [2,2];
-    let serverRecords = [[0,0],[0,0]]; // [0] contains home's wins [0[0]] and losses [0[1]], [1] contains away's wins [1[0]] and losses [1[1]].
     let serverFlipped = false;
     let serverMaps = [];
     //MAP ARRAYS CONTAIN THE MAP NAME, [x][0]... FOLLOWED BY THE ID OF THE WINNING TEAM, [x][1].
@@ -82,7 +81,7 @@ io.on('connection', (socket) => {
         serverFlipped = flipped;
         console.log(`Scorebug flip status is ${serverFlipped}`);
         io.emit('ioScorePong', serverScore);
-        io.emit('ioTeamPong', serverNames, serverSlugs, serverCols, serverLogos, serverRecords);
+        io.emit('ioTeamPong', serverNames, serverSlugs, serverCols, serverLogos);
         io.emit('ioTimeoutPong', serverTOL);
         io.emit('ioMapPong', serverMaps, serverCurrentMap);
         io.emit('ioFlipPong', serverFlipped);
@@ -91,14 +90,13 @@ io.on('connection', (socket) => {
         serverScore = score;
         io.emit('ioScorePong', serverScore);
     })
-    socket.on("teamInfoUpdates", (namesIn, slugsIn, colorsIn, logosIn, recordsIn) => {
+    socket.on("teamInfoUpdates", (namesIn, slugsIn, colorsIn, logosIn) => {
         serverNames = namesIn;
         serverSlugs = slugsIn;
         serverCols = colorsIn;
         serverLogos = logosIn;
-        serverRecords = recordsIn;
         console.log("emitting team pong");
-        io.emit('ioTeamPong', serverNames, serverSlugs, serverCols, serverLogos, serverRecords);
+        io.emit('ioTeamPong', serverNames, serverSlugs, serverCols, serverLogos);
         console.log(serverCols);
     });
     socket.on("tolUpdate", (tol) => {

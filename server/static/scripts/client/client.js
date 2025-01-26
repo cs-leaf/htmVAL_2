@@ -13,7 +13,6 @@ let slugs = ["H1", "A2"];
 let colors = [["#FF0000","#00FF00"],["#000000","#FFFFFF"]]; // [0[0]] and [0[1]] are primary colors, [1[0]] and [1[1]] are secondary colors.
 let logos = ["https://placehold.co/400","https://placehold.co/400"];
 let tol = [2,2];
-let records = [[0,0],[0,0]]; // [0] contains home's wins [0[0]] and losses [0[1]], [1] contains away's wins [1[0]] and losses [1[1]].
 let flipped = false;
 let currentGame = 0; // 0 = no game selected,  1 = VALORANT, 2 = Overwatch, 3 = other.
 let mapMode = 0 // 0 = BO3 and 1 = B05
@@ -123,13 +122,10 @@ function submitTeamInfo(teamID) {
     colors[0][teamID] = document.getElementById(`inputPCol${suffix}`).value;
     colors[1][teamID] = document.getElementById(`inputSCol${suffix}`).value;
     logos[teamID] = document.getElementById(`inputImg${suffix}`).value;
-    records[teamID][0] = document.getElementById(`inputWins${suffix}`).value;
-    records[teamID][1] = document.getElementById(`inputLosses${suffix}`).value;
     updateImgURL(`img${suffix}`, logos, teamID);
     updateText(`name${suffix}Display`, names, teamID);
-    updateText(`record${suffix}Display`, `${records[teamID][0]} - ${records[teamID][1]}`);
 
-    socket.emit(`teamInfoUpdates`, names, slugs, colors, logos, records);
+    socket.emit(`teamInfoUpdates`, names, slugs, colors, logos);
 }
 function flipBoard() {
     flipped = !flipped;

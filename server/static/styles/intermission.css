@@ -1,0 +1,68 @@
+@import url("https://use.typekit.net/khk5tbi.css");
+
+h1{
+    text-shadow: -5px -5px 0 #000, 5px -5px 0 #000, -5px 5px 0 #000, 5px 5px 0 #000;
+}
+img{
+    max-width: fit-content;
+    max-height: fit-content;
+    padding-top: 84px;
+}
+body{
+    margin: 0;
+    background-repeat: no-repeat;
+    background-image: url(../assets/img/intermission.png);
+}
+.scoreDisp{
+    display: inline-flex;
+    position: absolute;
+    margin: 0;
+    top: 120px;
+    left: 123px;
+    text-align: center;
+}
+.scoreDisp h1{
+    font-size: 140px;
+    color: white;
+    font-family: Erbaum-Medium, Erbaum;
+}
+.hyphen{
+    padding-top: 30px;
+    padding-left: 1.8px;
+    padding-right: 1.8px;
+}
+.score0div{
+    width:105px;
+    padding-top: 30px;
+    padding-left: 45px;
+    padding-right: 14px;
+}
+.score1div{
+    width:105px;
+    padding-top: 30px;
+    padding-left: 14px;
+    padding-right: 45px;
+}
+
+.nameDisp{
+    display: inline-flex;
+    position: absolute;
+    margin: 0;
+    top: 390px;
+    left: 7px;
+    text-align: center;
+}
+.nameDisp h1{
+    font-size: 50px;
+    color: white;
+    font-family: "sporty-pro", sans-serif;
+}
+.nameDisp div{
+    width: 425px;
+}
+.name0div{
+    padding-right: 92px;
+}
+.name1div{
+    padding-left: 92px;
+}
