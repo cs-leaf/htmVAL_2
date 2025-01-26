@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script defer src="../../scripts/frontend/scorebug_VAL.js"></script>
+    <link rel="stylesheet" href="../../styles/scorebug_VAL.css">
+</head>
+<body>
+    <div class="maps">
+        <div class="upcomingMap3">
+            <svg id="mapsSVG" viewBox="0 0 610 30">
+                <defs>
+                    <linearGradient id="linear-gradient0">
+                        <stop id="mapGradA1" offset="0.15" stop-color="#000"/>
+                        <stop id="mapGradA2" offset="1" stop-color="#000" stop-opacity="0"/>
+                    </linearGradient>
+                    <linearGradient id="linear-gradient1">
+                        <stop id="mapGradB1" offset="0.15" stop-color="#000"/>
+                        <stop id="mapGradB2" offset="1" stop-color="#000" stop-opacity="0"/>
+                    </linearGradient>
+                    <linearGradient id="linear-gradientCurrent">
+                        <stop id="mapGradCurrent1" offset="0.15" stop-color="#000"/>
+                        <stop id="mapGradCurrent2" offset="1" stop-color="#000" stop-opacity="0"/>
+                    </linearGradient>
+                </defs>
+                <g id="bo3Maps">
+                    <polygon id="map3bg_0" class="gradientFill" points="250 0 315 0 390 0 390 15 390 30 315 30 250 30 260 15 250 0"/>
+                    <polygon id="map2bg_0" class="gradientFill" points="120 0 190 0 250 0 260 15 250 30 190 30 120 30 130 15 120 0"/>
+                    <polygon id="map1bg_0" class="gradientFill" points="0 0 60 0 120 0 130 15 120 30 60 30 0 30 0 15 0 0"/>
+                    <text id="text3_0" class="mapText" transform="translate(320.1 20.09)"><tspan x="0" y="0">FRACTURE</tspan></text>
+                    <text id="text2_0" class="mapText" transform="translate(190.1 20.09)"><tspan x="0" y="0">FRACTURE</tspan></text>
+                    <text id="text1_0" class="mapText" transform="translate(60.1 20.09)"><tspan x="0" y="0">FRACTURE</tspan></text>
+                </g>
+                <g id="bo5Maps">
+                    <polygon id="map5bg_1" class="gradientFill" points="470 0 535 0 610 0 610 15 610 30 535 30 470 30 480 15 470 0"/>
+                    <polygon id="map4bg_1" class="gradientFill" points="350 0 420 0 470 0 480 15 470 30 420 30 350 30 360 15 350 0"/>
+                    <polygon id="map3bg_1" class="gradientFill" points="230 0 290 0 350 0 360 15 350 30 290 30 230 30 240 15 230 0"/>
+                    <polygon id="map2bg_1" class="gradientFill" points="110 0 180 0 230 0 240 15 230 30 180 30 110 30 120 15 110 0"/>
+                    <polygon id="map1bg_1" class="gradientFill" points="0 0 60 0 110 0 120 15 110 30 60 30 0 30 0 15 0 0"/>
+                    <text id="text5_1" class="mapText" transform="translate(535.1 20.09)"><tspan x="0" y="0">FRACTURE</tspan></text>
+                    <text id="text4_1" class="mapText" transform="translate(415.1 20.09)"><tspan x="0" y="0">FRACTURE</tspan></text>
+                    <text id="text3_1" class="mapText" transform="translate(295.1 20.09)"><tspan x="0" y="0">FRACTURE</tspan></text>
+                    <text id="text2_1" class="mapText" transform="translate(175.1 20.09)"><tspan x="0" y="0">FRACTURE</tspan></text>
+                    <text id="text1_1" class="mapText" transform="translate(55.1 20.09)"><tspan x="0" y="0">FRACTURE</tspan></text>
+                </g>
+            </svg>
+        </div>
+    </div>
+        <div class="bigScorebugDiv">
+            <div id="scorebugLeft">
+                <svg id="svgL" viewBox="0 0 177.49 202.73">
+                    <defs>
+                    <linearGradient id="linear-gradientL" x1="7.77" y1="22.75" x2="136.21" y2="22.75" gradientUnits="userSpaceOnUse">
+                        <stop id="gradL_stop1" offset=".17" stop-color="black"/>
+                        <stop id="gradL_stop2" offset="1" stop-color="red"/>
+                    </linearGradient>
+                    </defs>
+                    <g id="bugL">
+                        <rect id="timeoutBox2L" x="29.02" y="41" width="44" height="8"/>
+                        <rect id="timeoutBox1L" x="73.02" y="41" width="44" height="8"/>
+                        <path id="timeoutFrameL" class="cls-3" d="M116.02,33H21.02v10.01c0,3.86,3.13,6.99,6.99,6.99h104.02c.31,0,.62-.02.92-.07l-16.93-16.93ZM32.02,48c-1.1,0-2-.9-2-2v-2c0-1.1.9-2,2-2h38.43l1.27,6h-39.7ZM116.02,46c0,1.1-.9,2-2,2h-38.21l-1.28-6h39.49c1.1,0,2,.9,2,2v2Z"/>
+                        <polygon id="scoreBgSquareL" class="cls-2" points="146.02 62 174.02 33 145.02 3 116.02 32 146.02 62"/>
+                        <path id="mainColorL" class="cls-4L" d="M114.11,36.09l3.91,3.91H21.02l-2.44-4.06c-2.37-3.96-4.42-8.09-6.13-12.37-.95-2.38-1.8-4.8-2.54-7.26l-1.89-6.31-.25-.25,4.25-4.25h124.19l-22.1,22.11c-2.34,2.34-2.34,6.14,0,8.48Z"/>
+                        <text id="scoreL" class="cls-5" transform="translate(130 45.5)"><tspan x="0" y="0">0</tspan></text>
+                        <path id="mainFrameL" class="cls-1" d="M175.73,28.71l-24.76-25.76-1.19-1.19c-1.13-1.13-2.66-1.76-4.25-1.76H1.4C.16,0-.47,1.51.41,2.39l7.36,7.36,4.25-4.25h124.19l-22.1,22.11c-2.34,2.34-2.34,6.14,0,8.48l17.89,17.89,6.98,6.98,2.75,2.75c2.34,2.34,6.14,2.34,8.48,0l.76-.76,24.76-25.76c2.34-2.34,2.34-6.14,0-8.48ZM171.19,35.83l-22.34,23.34c-.29.29-.61.53-.96.7-1.51.81-3.43.57-4.7-.7l-24.34-24.34c-1.56-1.56-1.56-4.1,0-5.66l23.34-23.34c1.56-1.56,4.1-1.56,5.66,0l.12.12,23.22,24.22c1.56,1.56,1.56,4.1,0,5.66Z"/>
+                        <text id="slugL" class="cls-6" transform="translate(108.5 33.77)"><tspan x="0" y="0">SLUG</tspan></text>
+                    </g>
+                </svg>
+            </div>
+            <div id="scorebugRight">
+                <svg id="svgR" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 177.49 202.73">
+                    <defs>
+                    <linearGradient id="linear-gradientR" x1="-536.74" y1="22.75" x2="-408.3" y2="22.75" gradientTransform="translate(-367.02) rotate(-180) scale(1 -1)" gradientUnits="userSpaceOnUse">
+                        <stop id="gradR_stop1" offset=".17" stop-color="white"/>
+                        <stop id="gradR_stop2" offset="1" stop-color="green"/>
+                    </linearGradient>
+                    </defs>
+                    <g id="bugR">
+                        <rect id="timeoutBox2R" x="104.47" y="41" width="44" height="8" transform="translate(252.93 90) rotate(180)"/>
+                        <rect id="timeoutBox1R" x="60.47" y="41" width="44" height="8" transform="translate(164.93 90) rotate(180)"/>
+                        <path id="timeoutFrameR" class="cls-3" d="M61.47,33h95v10.01c0,3.86-3.13,6.99-6.99,6.99H45.46c-.31,0-.62-.02-.92-.07l16.93-16.93ZM145.47,48c1.1,0,2-.9,2-2v-2c0-1.1-.9-2-2-2h-38.43l-1.27,6h39.7ZM61.47,46c0,1.1.9,2,2,2h38.21l1.28-6h-39.49c-1.1,0-2,.9-2,2v2Z"/>
+                        <polygon id="scoreBgSquareR" class="cls-2" points="31.47 62 3.47 33 32.47 3 61.47 32 31.47 62"/>
+                        <path id="mainColorR" class="cls-4R" d="M63.37,36.09l-3.91,3.91h97l2.44-4.06c2.37-3.96,4.42-8.09,6.13-12.37.95-2.38,1.8-4.8,2.54-7.26l1.89-6.31.25-.25-4.25-4.25H41.28l22.1,22.11c2.34,2.34,2.34,6.14,0,8.48Z"/>
+                        <text id="scoreR" class="cls-5" transform="translate(17.69 45.5)"><tspan x="0" y="0">0</tspan></text>
+                        <path id="mainFrameR" class="cls-1" d="M1.76,28.71L26.52,2.95l1.19-1.19c1.13-1.13,2.66-1.76,4.25-1.76h144.13c1.25,0,1.87,1.51.99,2.39l-7.36,7.36-4.25-4.25H41.28l22.1,22.11c2.34,2.34,2.34,6.14,0,8.48l-17.89,17.89-6.98,6.98-2.75,2.75c-2.34,2.34-6.14,2.34-8.48,0l-.76-.76L1.76,37.19c-2.34-2.34-2.34-6.14,0-8.48ZM6.3,35.83l22.34,23.34c.29.29.61.53.96.7,1.51.81,3.43.57,4.7-.7l24.34-24.34c1.56-1.56,1.56-4.1,0-5.66L35.3,5.83c-1.56-1.56-4.1-1.56-5.66,0l-.12.12L6.3,30.17c-1.56,1.56-1.56,4.1,0,5.66Z"/>
+                        <text id="slugR" class="cls-6" transform="translate(69 33.77)"><tspan x="0" y="0">SLUG</tspan></text>
+                    </g>
+                </svg>
+            </div>
+        </div>
+</body>
+</html>

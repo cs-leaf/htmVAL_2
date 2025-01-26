@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 390 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-3 {
+        letter-spacing: -.07em;
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-5 {
+        fill: #fff;
+        font-family: Erbaum-Medium, Erbaum;
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      .cls-6 {
+        letter-spacing: -.1em;
+      }
+
+      .cls-7 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="250" y1="15" x2="390" y2="15" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#000"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".3"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="120" x2="260" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="0" x2="130" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Layer_5" data-name="Layer 5">
+    <g id="bo3">
+      <polygon id="map3bg" class="cls-7" points="250 0 315 0 390 0 390 15 390 30 315 30 250 30 260 15 250 0"/>
+      <polygon id="map2bg" class="cls-1" points="120 0 190 0 250 0 260 15 250 30 190 30 120 30 130 15 120 0"/>
+      <polygon id="map1bg" class="cls-4" points="0 0 60 0 120 0 130 15 120 30 60 30 0 30 0 15 0 0"/>
+      <text id="text3" class="cls-5" transform="translate(280.1 20.09)"><tspan class="cls-3" x="0" y="0">FRACTURE</tspan></text>
+      <text id="text2" class="cls-5" transform="translate(150.1 20.09)"><tspan class="cls-3" x="0" y="0">FRACTURE</tspan></text>
+      <text id="text1" class="cls-5" transform="translate(20.1 20.09)"><tspan class="cls-3" x="0" y="0">FRACTURE</tspan></text>
+    </g>
+  </g>
+</svg>

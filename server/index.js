@@ -99,6 +99,7 @@ io.on('connection', (socket) => {
         serverRecords = recordsIn;
         console.log("emitting team pong");
         io.emit('ioTeamPong', serverNames, serverSlugs, serverCols, serverLogos, serverRecords);
+        console.log(serverCols);
     });
     socket.on("tolUpdate", (tol) => {
         serverTOL = tol;
@@ -110,5 +111,5 @@ io.on('connection', (socket) => {
         console.log(serverMaps);
         console.log(`Current map is ${serverMaps[selMap - 1][0]}`);
         io.emit('ioMapPong', serverMaps, serverCurrentMap);
-    })
+    });
 });

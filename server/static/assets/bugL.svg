@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 177.49 202.73">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #4d4d4d;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: gray;
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-5 {
+        font-size: 30px;
+      }
+
+      .cls-5, .cls-6 {
+        font-family: Erbaum-Medium, Erbaum;
+        font-weight: 500;
+      }
+
+      .cls-6 {
+        font-size: 26px;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="7.77" y1="22.75" x2="136.21" y2="22.75" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#020202"/>
+      <stop offset=".17" stop-color="#390101"/>
+      <stop offset=".39" stop-color="#7e0101"/>
+      <stop offset=".6" stop-color="#b50000"/>
+      <stop offset=".78" stop-color="#d00"/>
+      <stop offset=".91" stop-color="#f60000"/>
+      <stop offset="1" stop-color="red"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer">
+    <g id="bugL">
+      <rect id="timeoutBox2L" x="29.02" y="41" width="44" height="8"/>
+      <rect id="timeoutBox1L" x="73.02" y="41" width="44" height="8"/>
+      <path id="timeoutFrameL" class="cls-3" d="M116.02,33H21.02v10.01c0,3.86,3.13,6.99,6.99,6.99h104.02c.31,0,.62-.02.92-.07l-16.93-16.93ZM32.02,48c-1.1,0-2-.9-2-2v-2c0-1.1.9-2,2-2h38.43l1.27,6h-39.7ZM116.02,46c0,1.1-.9,2-2,2h-38.21l-1.28-6h39.49c1.1,0,2,.9,2,2v2Z"/>
+      <polygon id="scoreBgSquareL" class="cls-2" points="146.02 62 174.02 33 145.02 3 116.02 32 146.02 62"/>
+      <path id="mainColorL" class="cls-4" d="M114.11,36.09l3.91,3.91H21.02l-2.44-4.06c-2.37-3.96-4.42-8.09-6.13-12.37-.95-2.38-1.8-4.8-2.54-7.26l-1.89-6.31-.25-.25,4.25-4.25h124.19l-22.1,22.11c-2.34,2.34-2.34,6.14,0,8.48Z"/>
+      <g id="scores">
+        <text id="scoreL_0" class="cls-5" transform="translate(134.21 42.5)"><tspan x="0" y="0">0</tspan></text>
+        <text id="scoreL_1" class="cls-5" transform="translate(135.59 92.5)"><tspan x="0" y="0">1</tspan></text>
+        <text id="scoreL_2" class="cls-5" transform="translate(134.9 142.5)"><tspan x="0" y="0">2</tspan></text>
+        <text id="scoreL_3" class="cls-5" transform="translate(135.02 192.5)"><tspan x="0" y="0">3</tspan></text>
+      </g>
+      <path id="mainFrameL" class="cls-1" d="M175.73,28.71l-24.76-25.76-1.19-1.19c-1.13-1.13-2.66-1.76-4.25-1.76H1.4C.16,0-.47,1.51.41,2.39l7.36,7.36,4.25-4.25h124.19l-22.1,22.11c-2.34,2.34-2.34,6.14,0,8.48l17.89,17.89,6.98,6.98,2.75,2.75c2.34,2.34,6.14,2.34,8.48,0l.76-.76,24.76-25.76c2.34-2.34,2.34-6.14,0-8.48ZM171.19,35.83l-22.34,23.34c-.29.29-.61.53-.96.7-1.51.81-3.43.57-4.7-.7l-24.34-24.34c-1.56-1.56-1.56-4.1,0-5.66l23.34-23.34c1.56-1.56,4.1-1.56,5.66,0l.12.12,23.22,24.22c1.56,1.56,1.56,4.1,0,5.66Z"/>
+      <text id="slugL" class="cls-6" transform="translate(34.26 33.77)"><tspan x="0" y="0">SLUG</tspan></text>
+    </g>
+  </g>
+</svg>

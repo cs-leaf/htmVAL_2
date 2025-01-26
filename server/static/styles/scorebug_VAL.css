@@ -1,0 +1,98 @@
+@import url("https://use.typekit.net/khk5tbi.css");    
+
+body{
+    margin: 0;
+}
+
+/* UPCOMING MAP STYLES */
+.maps{
+  position: absolute;
+  top: 0;
+}
+.upcomingMap3 svg, .upcomingMap5 svg{
+  height: 30px;
+  position: absolute;
+  margin: auto;
+  display: block;
+}
+.upcomingMap3{
+  z-index: 2;
+}
+.upcomingMap5{
+  z-index: 3;
+}
+.mapText {
+  fill: #ffffff;
+  font-family: Erbaum-Medium, Erbaum;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -.07em;
+  fill: white;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  paint-order: fill;
+  text-anchor: middle;
+}
+.gradientFill {
+  fill: url(#linear-gradientCurrent);
+}
+
+/* SCOREBUG STYLES*/
+.bigScorebugDiv{
+    z-index: 1;
+    margin-top: 75px;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+#scorebugLeft,#scorebugRight{
+    width: 50%;
+}
+.bigScorebugDiv svg{
+    height: 200px;
+    filter: drop-shadow(0px 5px 6px);
+}
+#svgR{
+    margin-left: 31px;
+    float: left;
+}
+#slugR, #slugL{
+    fill: white;
+    paint-order: fill;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+}
+#scoreR, #scoreL{
+    font-size: 40px;
+}
+#svgL{
+    margin-right: 30px;
+    float: right;
+}
+#slugL{
+  float: right;
+  text-anchor: end;
+}
+.cls-1 {
+    fill: #4d4d4d;
+  }
+  .cls-2 {
+    fill: #fff;
+  }
+  .cls-3 {
+    fill: gray;
+  }
+  .cls-4L {
+    fill: url(#linear-gradientL);
+  }
+  .cls-4R {
+    fill: url(#linear-gradientR);
+  }
+  .cls-5 {
+    font-size: 30px;
+  }
+  .cls-5, .cls-6 {
+    font-family: Erbaum-Medium, Erbaum;
+    font-weight: 500;
+  }
+  .cls-6 {
+    font-size: 26px;
+  }
