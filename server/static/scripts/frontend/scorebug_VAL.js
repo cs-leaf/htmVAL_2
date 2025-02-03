@@ -53,6 +53,7 @@ socket.on('ioMapPong', (inMapArr, inCurrentMap) => {
             updateText(`text${i}_${mapMode}`, mapArr[i-1][0]);
         };
         getMapWinner();
+        getCurrentMap();
     }else{
         mapMode = 0;
         hideDiv('bo5Maps', true);
@@ -62,6 +63,7 @@ socket.on('ioMapPong', (inMapArr, inCurrentMap) => {
             updateText(`text${i}_${mapMode}`, mapArr[i-1][0]);
         };
         getMapWinner();
+        getCurrentMap();
     }
 })
 
@@ -195,6 +197,24 @@ function getMapWinner(){
         }else{
             document.getElementById(`map${x+1}bg_${mapMode}`).style.fill=`url("#linear-gradientCurrent")`
         }
+    }
+}
+function getCurrentMap() {
+    console.log(`Current map: ${currentMap}, Map Mode: ${mapMode}`);
+    // Reset ALL text elements first
+    for (let x = 0; x < mapArr.length; x++) {
+        const textElement = document.getElementById(`text${x+1}_${mapMode}`);
+        if (textElement) {
+            textElement.style.fill = `#FFFFFF`;
+        }
+    }
+    // Then apply the highlight to ONLY the current map
+    const currentText = document.getElementById(`text${currentMap}_${mapMode}`);
+    if (currentText) {
+        console.log(`Highlighting text${currentMap}_${mapMode}`);
+        currentText.style.fill = `#fccf03`;
+    } else {
+        console.warn(`Element text${currentMap}_${mapMode} not found.`);
     }
 }
 

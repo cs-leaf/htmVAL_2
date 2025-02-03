@@ -22,7 +22,7 @@ main {
 h1 {
     text-align: center;
 }
-#valControl > h1, #ow2Control > h1, #homeControl > h1, #otherControl > h1{
+#valControl > h1, #homeControl > h1{
     color: rgb(242, 241, 240);
 }
 button:hover{
@@ -149,8 +149,13 @@ nav a.active {
 .teamInfoPanel h3{
     text-align: center;
 }
-
 .teamContainer{
     display: flex;
     justify-content: center;
+}
+
+#homeControl p{
+    font-size: larger;
+    text-align: center;
+    color: white;
 }

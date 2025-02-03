@@ -1,8 +1,6 @@
 const socket = io('ws://localhost:5500'); //ON START
 hideDiv("homeControl", false);
 hideDiv("valControl", true);
-hideDiv("ow2Control", true);
-hideDiv("otherControl", true);
 hideDiv("valBO5Select", true);
 hideDiv("valBO3Select", true);
 
@@ -84,8 +82,6 @@ function selectGame(gameID) {
     }
     hideDiv("homeControl", true);
     hideDiv("valControl", true);
-    hideDiv("ow2Control", true);
-    hideDiv("otherControl", true);
 
     // Show the selected control div
     const prefix = createPrefix(currentGame);
