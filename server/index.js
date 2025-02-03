@@ -30,7 +30,7 @@ let mainWindow;
 const createMainWindow = () => {
     mainWindow = new BrowserWindow({
         width: 1175,
-        height: 800,
+        height: 670,
         webPreferences: {
             contextIsolation: true, // Recommended for security
             preload: path.join(__dirname, 'preload.js') // Optional for secure communication

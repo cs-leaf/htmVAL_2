@@ -1,6 +1,7 @@
 const socket = io('ws://localhost:5500'); //ON START
 hideDiv("homeControl", false);
 hideDiv("valControl", true);
+hideDiv("keebControl", true);
 hideDiv("valBO5Select", true);
 hideDiv("valBO3Select", true);
 
@@ -12,7 +13,7 @@ let colors = [["#FF0000","#00FF00"],["#000000","#FFFFFF"]]; // [0[0]] and [0[1]]
 let logos = ["https://placehold.co/400","https://placehold.co/400"];
 let tol = [2,2];
 let flipped = false;
-let currentGame = 0; // 0 = no game selected,  1 = VALORANT, 2 = Overwatch, 3 = other.
+let currentMenu = 0; // 0 = no game selected,  1 = VALORANT, 2 = Overwatch, 3 = other.
 let mapMode = 0 // 0 = BO3 and 1 = B05
 let currentMap = 1;
 
@@ -76,12 +77,13 @@ function updateImgURL(elementID, content, index = null) {
 function serverConsoleLog(logMessage) {
     socket.emit("serverConsoleLog", logMessage);
 };
-function selectGame(gameID) {
-    if (gameID >= 0 && gameID < 4){
-        currentGame = gameID;
+function selectMenu(menuID) {
+    if (menuID >= 0 && menuID < 4){
+        currentGame = menuID;
     }
     hideDiv("homeControl", true);
     hideDiv("valControl", true);
+    hideDiv("keebControl", true);
 
     // Show the selected control div
     const prefix = createPrefix(currentGame);
@@ -92,9 +94,9 @@ function selectGame(gameID) {
         serverConsoleLog(`Control div with ID "${controlID}" does not exist.`);
     }
 };
-function createPrefix(gameID) {
-    const gameArr = ["home", "val", "ow2", "other"];
-    return gameArr[gameID] ?? "error";
+function createPrefix(menuID) {
+    const gameArr = ["home", "val", "keeb", "other"];
+    return gameArr[menuID] ?? "error";
 };
 function hideDiv(elementID, hideBool) {
     const element = document.getElementById(elementID);
@@ -223,4 +225,60 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+//Keybinds
+let keybinds = {
+    increaseScoreA: "Ctrl+ArrowUp",
+    decreaseScoreA: "Ctrl+ArrowDown",
+    increaseScoreB: "Shift+ArrowUp",
+    decreaseScoreB: "Shift+ArrowDown",
+    resetScores: "Ctrl+Shift+ArrowDown",
+    flipTeams: "Shift+F",
+}
+document.addEventListener("keydown", function(event) {
+    if (event.repeat) return; // Prevent holding the key from triggering multiple times
+
+    let keyCombo = 
+        (event.ctrlKey ? "Ctrl+" : "") +
+        (event.shiftKey ? "Shift+" : "") +
+        (event.altKey ? "Alt+" : "") +
+        event.key;
+
+    console.log(`Detected key: ${keyCombo}`); // Debugging
+
+    for (let action in keybinds) {
+        if (keybinds[action] === keyCombo) {
+            handleKeybind(action);
+            event.preventDefault(); // Prevent default browser behavior (e.g., Ctrl+R refreshing the page)
+            return;
+        }
+    }
+});
+// Function to execute keybind actions
+function handleKeybind(action) {
+    switch (action) {
+        case "increaseScoreA":
+            updateScore(0, 1);
+            break;
+        case "decreaseScoreA":
+            updateScore(0, -1);
+            break;
+        case "increaseScoreB":
+            updateScore(1, 1);
+            break;
+        case "decreaseScoreB":
+            updateScore(1, -1);
+            break;
+        case "resetScores":
+            resetScore(0);
+            resetScore(1);
+            break;
+        case "flipTeams":
+            flipBoard();
+            break;
+        default:
+            console.log(`No function assigned to ${action}`);
+    }
+}
+
 

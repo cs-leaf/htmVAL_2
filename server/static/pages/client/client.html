@@ -10,8 +10,9 @@
 </head>
 <body>
     <nav>
-        <a onclick="selectGame(0)" class="active">HOME</a>
-        <a onclick="selectGame(1)">VALORANT</a>
+        <a onclick="selectMenu(0)" class="active">HOME</a>
+        <a onclick="selectMenu(1)">VALORANT</a>
+        <a onclick="selectMenu(2)">KEYBINDS</a>
     </nav>
     <main>
         <div id="homeControl">
@@ -279,6 +280,18 @@
                     </div>
                     </fieldset>
                 </fieldset>
+        </div>    
+        <div id="keebControl">
+            <!--GOAL IS TO EVENTUALLY ADD CUSTOM BINDS-->
+            <h1>htmVAL Home</h1>
+            <h2><strong>See Keybinds here!</strong></h2>
+            <p><strong>Increase Score A:</strong> Shift+UpArrow</p>
+            <p><strong>Decrease Score A:</strong> Shift+DownArrow</p>
+            <p><strong>Increase Score B:</strong> Ctrl+UpArrow</p>
+            <p><strong>Decrease Score B:</strong> Ctrl+DownArrow</p>
+            <p><strong>Reset Scores:</strong> Ctrl+Shift+DownArrow</p>
+            <p><strong>Flip Scorebug:</strong> Shift+F</p>
+        </div>    
     </main>
 </body>
 </html>

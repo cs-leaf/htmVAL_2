@@ -22,7 +22,7 @@ main {
 h1 {
     text-align: center;
 }
-#valControl > h1, #homeControl > h1{
+#valControl > h1, #homeControl > h1, #keebControl > h1{
     color: rgb(242, 241, 240);
 }
 button:hover{
@@ -154,8 +154,12 @@ nav a.active {
     justify-content: center;
 }
 
-#homeControl p{
+#homeControl p, #keebControl p{
     font-size: larger;
+    text-align: center;
+    color: white;
+}
+#keebControl h2{
     text-align: center;
     color: white;
 }
