@@ -22,7 +22,7 @@ main {
 h1 {
     text-align: center;
 }
-#valControl > h1, #homeControl > h1, #keebControl > h1{
+#valControl > h1, #homeControl > h1, #keebControl > h1, #otherControl > h1{
     color: rgb(242, 241, 240);
 }
 button:hover{
@@ -96,6 +96,10 @@ nav a.active {
     "teamA preview teamB"
     "teamA other teamB";
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.575);
+}
+.inputField{
+    margin: 10px;
     background-color: rgba(255, 255, 255, 0.575);
 }
 .controlField h2{

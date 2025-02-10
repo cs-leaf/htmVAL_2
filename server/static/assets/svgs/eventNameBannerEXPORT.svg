@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 230 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        font-family: Amplitude-Ultra, Amplitude;
+        font-size: 18px;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0" y1="15" x2="230" y2="15" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset=".3" stop-color="#000"/>
+      <stop offset=".7" stop-color="#000"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer_6" data-name="Layer 6">
+    <g>
+      <g id="eventbg">
+        <rect class="cls-2" width="230" height="30"/>
+      </g>
+      <text class="cls-1" transform="translate(63.34 20.99)"><tspan x="0" y="0">EVENT NAME</tspan></text>
+    </g>
+  </g>
+</svg>

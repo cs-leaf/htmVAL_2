@@ -2,6 +2,7 @@
 const socket = io('ws://localhost:5500');
 hideDiv(`bo3Maps`, true);
 hideDiv(`bo5Maps`, true);
+hideDiv('svgBanner', true);
 
 //VARIABLES... Home is [0], Away is [1];
 let score = [0,0];
@@ -64,6 +65,14 @@ socket.on('ioMapPong', (inMapArr, inCurrentMap) => {
         };
         getMapWinner();
         getCurrentMap();
+    }
+})
+socket.on('ioOtherPong', (eventName) => {
+    if (eventName.length != 0){
+        hideDiv('svgBanner', false);
+        updateText('bannerText', eventName);
+    }else{
+        hideDiv('svgBanner', true);
     }
 })
 

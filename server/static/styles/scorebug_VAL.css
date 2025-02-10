@@ -96,3 +96,28 @@ body{
   .cls-6 {
     font-size: 26px;
   }
+
+  /* event name banner */
+  .frontBanner{
+    z-index: 4;
+    width: 100%;
+    align-content: center;
+    display: flex;
+    position: fixed;
+    left: 845px;
+    top: 160px;
+  }
+  .frontBanner text{
+    text-anchor: middle;
+  }
+  .frontBanner svg{
+    height: 30px;
+  }
+  .bannerText {
+    fill: #fff;
+    font-family: Erbaum-Medium, Erbaum;
+    font-size: 18px;
+  }
+  .bannerBG{
+    fill: url(#bannerLinear-gradient);
+  }

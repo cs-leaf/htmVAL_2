@@ -1,6 +1,7 @@
 const socket = io('ws://localhost:5500'); //ON START
 hideDiv("homeControl", false);
 hideDiv("valControl", true);
+hideDiv("otherControl", true);
 hideDiv("keebControl", true);
 hideDiv("valBO5Select", true);
 hideDiv("valBO3Select", true);
@@ -13,7 +14,7 @@ let colors = [["#FF0000","#00FF00"],["#000000","#FFFFFF"]]; // [0[0]] and [0[1]]
 let logos = ["https://placehold.co/400","https://placehold.co/400"];
 let tol = [2,2];
 let flipped = false;
-let currentMenu = 0; // 0 = no game selected,  1 = VALORANT, 2 = Overwatch, 3 = other.
+let currentMenu = 0; // 0 = HOME,  1 = VALORANT, 2 = OTHER, 3 = KEYBINDS.
 let mapMode = 0 // 0 = BO3 and 1 = B05
 let currentMap = 1;
 
@@ -83,6 +84,7 @@ function selectMenu(menuID) {
     }
     hideDiv("homeControl", true);
     hideDiv("valControl", true);
+    hideDiv("otherControl", true);
     hideDiv("keebControl", true);
 
     // Show the selected control div
@@ -95,7 +97,7 @@ function selectMenu(menuID) {
     }
 };
 function createPrefix(menuID) {
-    const gameArr = ["home", "val", "keeb", "other"];
+    const gameArr = ["home", "val", "other", "keeb"];
     return gameArr[menuID] ?? "error";
 };
 function hideDiv(elementID, hideBool) {
@@ -171,6 +173,11 @@ function submitMaps() {
     } else {
         console.error("Invalid mapMode value.");
     }
+}
+function submitOther() {
+    //SUBMIT EVENTS FROM THE "OTHER CONTROLS MENU"
+    let eventNameOut = document.getElementById("eventName").value;
+    socket.emit(`otherUpdate`, eventNameOut);
 }
 // Helper function to parse winner input
 function parseWinner(winner) {

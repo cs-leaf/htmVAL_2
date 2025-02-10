@@ -76,6 +76,7 @@ io.on('connection', (socket) => {
     let serverMaps = [];
     //MAP ARRAYS CONTAIN THE MAP NAME, [x][0]... FOLLOWED BY THE ID OF THE WINNING TEAM, [x][1].
     let serverCurrentMap = 1;
+    let serverEventName = "";
 
     socket.on("flipUpdate", (flipped) => {
         serverFlipped = flipped;
@@ -110,4 +111,14 @@ io.on('connection', (socket) => {
         console.log(`Current map is ${serverMaps[selMap - 1][0]}`);
         io.emit('ioMapPong', serverMaps, serverCurrentMap);
     });
+    socket.on("otherUpdate", (eventName) => {
+        serverEventName = eventName;
+        //if there is no event name, the server doesn't send out an update to the scorebug.
+        if (serverEventName.length != 0){
+            io.emit('ioOtherPong', serverEventName);
+            console.log(`Event name string was not empty- even name is ${serverEventName}`);
+        }else{
+            io.emit('ioOtherPong', serverEventName);
+        }
+    })
 });
